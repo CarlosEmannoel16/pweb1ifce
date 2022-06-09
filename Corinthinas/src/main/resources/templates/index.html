@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Teste</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			
+			nav{
+				width:100vw;
+				height:50px;
+				background-color:cornflowerblue;
+				}
+				
+				ul{
+					display:flex;
+				    flex-direction:row;
+				    align-items:center;
+				   	height: 100%;
+				    }
+				li{
+					
+					margin:0 30px;
+				}
+				td{
+					padding:10px;
+				}
+		</style>
+	</head>
+	
+	<body>
+	
+		<nav>
+			<ul>
+				<a href="/">        <li>Home</li></a>
+				<a href="/cadastro"> <li>Cadastrar</li></a>
+				
+			</ul>
+			
+		</nav>
+		
+		
+		<table>
+			<thead>
+				<tr>
+	
+					<th>id</th>,
+					<th>Nome</th>
+					<th>Posição</th>
+					<th>Gols</th>
+					<th>Asssitências</th>
+					
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="jogador: ${listarJogador}">
+					<td th:text="${jogador.id}" scope="row"></td>
+					<td th:text="${jogador.nome}" ></td>
+					<td th:text="${jogador.posicao}" ></td>
+					<td th:text="${jogador.quantidadeDeGols}"></td>
+					<td th:text="${jogador.assistencias}" ></td>
+					<td> <a th:href="@{/jogador/deletar/{id}(id = ${jogador.id})}">Excluir </a> </td>
+					<td> <a th:href="@{/jogador/editar/{id}(id = ${jogador.id})}">Editar </a> </td>
+				</tr>
+			</tbody>
+			
+			
+		</table>
+	
+	</body>
+</html>

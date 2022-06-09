@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html >
+	<head>
+		<title>Teste</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			
+			nav{
+				width:100vw;
+				height:50px;
+				background-color:cornflowerblue;
+				}
+				
+				ul{
+					display:flex;
+				    flex-direction:row;
+				    align-items:center;
+				   	height: 100%;
+				    }
+				li{
+					
+					margin:0 30px;
+				}
+				
+				input{
+					height: 30px;
+					margin: 10px;
+				}
+				
+				
+		</style>
+	</head>
+	
+	<body>
+	
+		<nav>
+			<ul>
+				<a href="/"> <li>Home</li></a>
+				<a href="/cadastro"> <li>Cadastrar</li></a>
+				
+			</ul>
+			
+		</nav>
+		
+		
+		<form method="get" action="/cadastro/action"> 
+			<input type="text" name="nome" placeholder="Digite aqui o nome do jogador" required>
+			<input type="text" name="posicao" placeholder="Digite aqui o posicção do jogador" required>
+			<input type="number" name="quantidadeDeGols" placeholder="Digite aqui os gols feitos do jogador" required>
+			<input type="number" name="assistencias" placeholder="Digite aqui as assistências do jogador" required>
+			<input type="submit" value="Cadastrar">
+			
+		</form>
+		
+	
+	</body>
+</html>
